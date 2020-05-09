@@ -1,14 +1,13 @@
 import React from 'react';
 import './App.css';
-import Tasks from './Components/Tasks';
+import Login from './Components/Login';
 
 function App() {
   return (
     
     <div className="App-header">
 
-     {/* <Login/> */}
-     <Tasks/>
+     <Login/>
 </div>
   );
 }
