@@ -7,7 +7,7 @@ export function PostData(type, userData) {
         fetch(BaseURL+type, {
             method: 'POST',
             headers:{
-                'apptoken':'r0MrA268ORAobX53qkoaohaA7g9ek3JJ',
+                'authorization':'r0MrA268ORAobX53qkoaohaA7g9ek3JJ',
                 'Content-Type': 'application/x-www-form-urlencoded'
             },
             body: JSON.stringify(userData)

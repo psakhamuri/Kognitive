@@ -10,7 +10,8 @@ class Login extends Component {
     this.state = {
       email: '',
       password: '',
-      tenantid: '3'
+      tenantid: '3',
+      redirectToReferrer: false
     }
     this.login = this.login.bind(this);
     this.onchange = this.onchange.bind(this);
