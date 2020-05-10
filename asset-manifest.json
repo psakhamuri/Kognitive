@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/github.io/Kognitive/kognitive/static/css/main.744aeef1.chunk.css",
+    "main.js": "/github.io/Kognitive/kognitive/static/js/main.a232ea7e.chunk.js",
+    "main.js.map": "/github.io/Kognitive/kognitive/static/js/main.a232ea7e.chunk.js.map",
+    "runtime-main.js": "/github.io/Kognitive/kognitive/static/js/runtime-main.0b496c08.js",
+    "runtime-main.js.map": "/github.io/Kognitive/kognitive/static/js/runtime-main.0b496c08.js.map",
+    "static/css/2.74189dbb.chunk.css": "/github.io/Kognitive/kognitive/static/css/2.74189dbb.chunk.css",
+    "static/js/2.6ea7e5ce.chunk.js": "/github.io/Kognitive/kognitive/static/js/2.6ea7e5ce.chunk.js",
+    "static/js/2.6ea7e5ce.chunk.js.map": "/github.io/Kognitive/kognitive/static/js/2.6ea7e5ce.chunk.js.map",
+    "index.html": "/github.io/Kognitive/kognitive/index.html",
+    "precache-manifest.f5e9c454a29e82c79db14267e3164814.js": "/github.io/Kognitive/kognitive/precache-manifest.f5e9c454a29e82c79db14267e3164814.js",
+    "service-worker.js": "/github.io/Kognitive/kognitive/service-worker.js",
+    "static/css/2.74189dbb.chunk.css.map": "/github.io/Kognitive/kognitive/static/css/2.74189dbb.chunk.css.map",
+    "static/css/main.744aeef1.chunk.css.map": "/github.io/Kognitive/kognitive/static/css/main.744aeef1.chunk.css.map",
+    "static/js/2.6ea7e5ce.chunk.js.LICENSE.txt": "/github.io/Kognitive/kognitive/static/js/2.6ea7e5ce.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.0b496c08.js",
+    "static/css/2.74189dbb.chunk.css",
+    "static/js/2.6ea7e5ce.chunk.js",
+    "static/css/main.744aeef1.chunk.css",
+    "static/js/main.a232ea7e.chunk.js"
+  ]
+}
