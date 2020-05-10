@@ -1,31 +1,67 @@
 import React, { Component } from 'react';
+import {Redirect} from 'react-router-dom';
+import {PostData} from '../Services/postData';
 import './Login.css';
 
 class Login extends Component {
+
+  constructor(props){
+    super(props);
+    this.state = {
+      email: '',
+      password: '',
+      tenantid: '3'
+    }
+    this.login = this.login.bind(this);
+    this.onchange = this.onchange.bind(this);
+  }
+  login(){
+    if(this.state.email && this.state.password && this.state.tenantid){
+      PostData('login/password',this.state).then((result) => {
+       let responseJson = result;
+       if(responseJson.userData){         
+         sessionStorage.setItem('userData',JSON.stringify(responseJson));
+         this.setState({redirectToReferrer: true});
+       }
+       
+      });
+    }
+    }
+
+    onchange(e){
+      this.setState({[e.target.name]: e.target.value})
+    }
     render(){
+      if (this.state.redirectToReferrer) {
+        return (<Redirect to={'/Tasks'}/>)
+      }
+     
+      if(sessionStorage.getItem('userData')){
+        return (<Redirect to={'/Tasks'}/>)
+      }
   return (
     
-    <div class="card mt-4 mr-3 ml-3">
-    <div class="card-body">
+    <div className="card mt-4 mr-3 ml-3">
+    <div className="card-body">
   
-    <div class="login-form">
-      <form action = "">
-      <img class="card-img-top" src="/kog_logo_flat@3x.png" alt=""/>
+    <div className="login-form">
+      <form onSubmit = {this.login}>
+      <img className="card-img-top" src="/kog_logo_flat@3x.png" alt=""/>
   
-      <div class="social-icon">
-          <button type="button mb-3"><span class="input-icon"><img  src="/assets/icons/othersize/google-favicon.png" alt="" />&nbsp;</span>Login With Google</button>
-          <button type="button"><span class="input-icon"><img  src="/assets/icons/othersize/microsoft.png" alt="" />&nbsp;</span>Login With Office 365</button>
+      <div className="social-icon">
+          <button type="button mb-3"><span className="input-icon"><img  src="/assets/icons/othersize/google-favicon.png" alt="" />&nbsp;</span>Login With Google</button>
+          <button type="button"><span className="input-icon"><img  src="/assets/icons/othersize/microsoft.png" alt="" />&nbsp;</span>Login With Office 365</button>
         </div>
-        <div class="seperator"><b>or</b></div>
-      <div class="form-group">
-          <input type="email" name="email" placeholder="Your Employee ID"/>
-          <span class="input-icon"><img  src="/assets/icons/24/icon-24-person-grey.png" alt=""/></span>
+        <div className="seperator"><b>or</b></div>
+      <div className="form-group">
+          <input type="email" name="email" placeholder="Your Employee ID" onChange = {this.onchange}/>
+          <span className="input-icon"><img  src="/assets/icons/24/icon-24-person-grey.png" alt=""/></span>
         </div>
-        <div class="form-group">
-          <input type="password" name="psw" placeholder="Your Password"/>
-          <span class="input-icon"><img src="/assets/icons/24/icon-24-password.png" alt=""/></span>
+        <div className="form-group">
+          <input type="password" name="password" placeholder="Your Password" onChange = {this.onchange}/>
+          <span className="input-icon"><img src="/assets/icons/24/icon-24-password.png" alt=""/></span>
         </div>
-        <button class="login-btn">Login</button> 
+        <button className="login-btn">Login</button> 
       </form>
       </div>
   
